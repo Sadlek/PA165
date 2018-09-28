@@ -16,7 +16,11 @@ public class Car {
 		this.color = color;
 		this.type = type;
 		this.constructionYear = constructionYear;
-		this.price = price;
+		if (price < 0) {
+		    throw new IllegalArgumentException("Price was negative");
+        } else {
+            this.price = price;
+        }
 	}
 
 	public Color getColor() {
